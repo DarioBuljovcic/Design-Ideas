@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(25, 25, 25);
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.container{
+    position: absolute;
+    transform:translate(0%,-50%);
+    left:50%;
+    top:50%;
+    display: flex;
+    gap:20px;
+    transition: all .4s ease-out;
+    
+    img{
+        width: 300px;
+        height: 500px;
+        object-fit: cover;
+        object-position: 100% 50%;
+        user-select: none;
+    }
+}
