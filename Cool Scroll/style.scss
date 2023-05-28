@@ -1,23 +1,24 @@
-body{
+body {
     background-color: rgb(25, 25, 25);
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
-.container{
+.container {
     position: absolute;
-    transform:translate(0%,-50%);
-    left:50%;
-    top:50%;
+    transform: translate(0%, -50%);
+    left: 50%;
+    top: 50%;
     display: flex;
-    gap:20px;
-    transition: all .4s ease-out;
-    
-    img{
+    gap: 20px;
+    transition: all 0.4s ease-out;
+
+    img {
         width: 300px;
         height: 500px;
         object-fit: cover;
         object-position: 100% 50%;
         user-select: none;
+        transition: all 0.1s ease;
     }
 }
