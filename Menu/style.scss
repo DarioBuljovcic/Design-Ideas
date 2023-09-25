@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(32, 32, 32);
+}
+.container {
+    .menu {
+        position: relative;
+        filter: url("#goo");
+        background-color: rgb(170, 79, 79);
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            font-size: 30px;
+            color: rgb(228, 221, 160);
+            position: absolute;
+            background-color: rgb(170, 79, 79);
+        }
+        .fa-gear {
+            z-index: 20;
+        }
+        .option {
+            background-color: rgb(170, 79, 79);
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transition: all 1.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main {
+            z-index: 100;
+        }
+        &:hover .opt-1 {
+            top: -60px;
+            left: -110px;
+        }
+        &:hover .opt-2 {
+            top: -120px;
+        }
+        &:hover .opt-3 {
+            top: -60px;
+            left: 130px;
+        }
+    }
+}
+svg {
+    display: none;
+}

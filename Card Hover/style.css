@@ -1,0 +1,96 @@
+:root {
+  --timing: 400ms;
+  --rotation: 20deg;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  perspective: 1000px;
+}
+
+.yoda {
+  position: relative;
+  height: 500px;
+  aspect-ratio: 9/16;
+  transform-style: preserve-3d;
+  transition: transform 500ms ease;
+}
+.yoda img {
+  max-width: 100%;
+}
+.yoda .logo {
+  left: 0;
+  bottom: 20px;
+  transform: translateZ(20px);
+  position: absolute;
+  transition: bottom 500ms ease, transform 500ms ease;
+  filter: invert(100%);
+}
+.yoda:hover .logo {
+  opacity: 1;
+  bottom: 40px;
+  transform: translateZ(85px) rotateX(-25deg);
+}
+.yoda .front-image {
+  opacity: 0;
+  left: 0;
+  bottom: 0;
+  transform: translateZ(0px);
+  position: absolute;
+  transition: bottom 500ms ease, opacity 500ms ease, transform 500ms ease;
+}
+.yoda:hover .front-image {
+  opacity: 1;
+  bottom: 80px;
+  transform: translateZ(80px) rotateX(-25deg);
+}
+.yoda .bg-image {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: -150px center;
+     object-position: -150px center;
+}
+.yoda::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-shadow: inset 0 0 80px 10px black;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+.yoda::before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  background-color: black;
+  filter: blur(20px);
+  width: 90%;
+  height: 20%;
+  opacity: 1;
+  bottom: 0;
+  transition: opacity 500ms ease, bottom 500ms ease;
+  transform: translateZ(-20px);
+}
+.yoda:hover {
+  transform: rotateX(25deg);
+}
+.yoda:hover::after {
+  opacity: 1;
+}
+.yoda:hover::before {
+  bottom: -30px;
+  transform: translateZ(-20px), rotateX(-25deg);
+}/*# sourceMappingURL=style.css.map */
