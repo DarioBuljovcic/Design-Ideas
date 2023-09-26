@@ -1,0 +1,52 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(127, 210, 255);
+}
+
+.container .link {
+  width: 300px;
+  padding-block: 20px;
+  cursor: pointer;
+  background-color: rgb(59, 59, 59);
+  text-align: center;
+  transform: skewY(-10deg);
+  color: white;
+  position: relative;
+  transition: 0.2s;
+  z-index: var(--i);
+}
+.container .link::after {
+  position: absolute;
+  top: -43%;
+  left: -5%;
+  content: "";
+  width: 100%;
+  height: 46%;
+  background-color: rgb(59, 59, 59);
+  transform: skewX(50deg);
+  transition: 0.2s;
+}
+.container .link::before {
+  position: absolute;
+  top: -23%;
+  left: -10%;
+  content: "";
+  width: 10%;
+  height: 100%;
+  background-color: rgb(59, 59, 59);
+  transform: skewY(40deg);
+  transition: 0.2s;
+}
+.container .link:hover {
+  background-color: rgb(54, 93, 141);
+  transform: skewY(-10deg) translateX(-80px);
+}
+.container .link:hover::after, .container .link:hover::before {
+  background-color: rgb(54, 93, 141);
+}/*# sourceMappingURL=style.css.map */

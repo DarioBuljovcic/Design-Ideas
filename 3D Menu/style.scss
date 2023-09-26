@@ -1,0 +1,57 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(127, 210, 255);
+}
+$boxColor: rgb(59, 59, 59);
+$boxHover: rgb(54, 93, 141);
+
+.container {
+    .link {
+        width: 300px;
+        padding-block: 20px;
+        cursor: pointer;
+        background-color: $boxColor;
+        text-align: center;
+        transform: skewY(-10deg);
+        color: white;
+        position: relative;
+        transition: 0.2s;
+        z-index: var(--i);
+        &::after {
+            position: absolute;
+            top: -43%;
+            left: -5%;
+            content: "";
+            width: 100%;
+            height: 46%;
+            background-color: $boxColor;
+            transform: skewX(50deg);
+            transition: 0.2s;
+        }
+        &::before {
+            position: absolute;
+            top: -23%;
+            left: -10%;
+            content: "";
+            width: 10%;
+            height: 100%;
+            background-color: $boxColor;
+            transform: skewY(40deg);
+            transition: 0.2s;
+        }
+        &:hover {
+            background-color: $boxHover;
+            transform: skewY(-10deg) translateX(-80px);
+        }
+        &:hover::after,
+        &:hover::before {
+            background-color: $boxHover;
+        }
+    }
+}
