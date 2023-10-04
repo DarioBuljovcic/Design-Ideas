@@ -1,0 +1,37 @@
+body {
+  background-color: rgb(37, 43, 59);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  -webkit-mask: linear-gradient(90deg, transparent, white 20% 80%, transparent);
+          mask: linear-gradient(90deg, transparent, white 20% 80%, transparent);
+  max-width: 500px;
+  overflow: hidden;
+}
+.container .scroller {
+  padding: 0;
+  width: -moz-max-content;
+  width: max-content;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  animation: scroll 10s infinite linear;
+}
+.container .scroller .item {
+  font-size: 18px;
+  color: rgb(220, 218, 218);
+  background-color: rgb(25, 28, 38);
+  padding: 0.5rem;
+  border-radius: 10%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}/*# sourceMappingURL=style.css.map */
