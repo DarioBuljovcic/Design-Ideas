@@ -1,0 +1,106 @@
+:root {
+    --circleWH: 25px;
+    --circleP: 20px;
+    --imageW: 65;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(34, 41, 55);
+}
+.container {
+    display: flex;
+    gap: 10px;
+    width: 1000px;
+    aspect-ratio: 1920/1280;
+    .imageContainer {
+        height: 100%;
+        height: 400px;
+        width: 110px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        transition: width 0.8s cubic-bezier(0, 0, 0.2, 1);
+        position: relative;
+        padding: 10px;
+
+        .img {
+            position: absolute;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 100%;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            border-radius: 1vw;
+            aspect-ratio: 1920/1280;
+            filter: blur(3px);
+            transition: filter 0.8s cubic-bezier(0, 0, 0.2, 1);
+
+            &[for="image1"] {
+                background-image: url("img/image1.jpg");
+            }
+            &[for="image2"] {
+                background-image: url("img/image2.jpg");
+            }
+            &[for="image3"] {
+                background-image: url("img/image3.jpg");
+            }
+            &[for="image4"] {
+                background-image: url("img/image4.jpg");
+            }
+            &[for="image5"] {
+                background-image: url("img/image5.jpg");
+            }
+        }
+        .bottom {
+            z-index: 2;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            filter: blur(-3px);
+            position: relative;
+            width: 100%;
+            height: 80px;
+            overflow: hidden;
+            .number {
+                background-color: rgb(34, 41, 55);
+                border-radius: 100%;
+                aspect-ratio: 1/1;
+                padding: var(--circleP);
+                height: var(--circleWH);
+                text-align: center;
+                color: white;
+                font-size: var(--circleWH);
+            }
+            .text {
+                font-size: 20px;
+                color: white;
+                overflow: hidden;
+                width: 350px;
+                opacity: 0;
+                transform: translateY(100px);
+                transition: all 0.3s ease;
+            }
+        }
+        &.active {
+            width: 100%;
+        }
+        &.active .img {
+            filter: blur(0px);
+        }
+        &.active .bottom .text {
+            transition-delay: 0.3s;
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+}
