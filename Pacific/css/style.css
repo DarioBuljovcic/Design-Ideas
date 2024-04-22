@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-Section {
+  height: 600px;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-Section .headerText {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 10rem;
+  background: linear-gradient(to right, rgb(255, 191, 117) 20%, rgb(87, 37, 227), rgb(113, 244, 224) 80%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}/*# sourceMappingURL=style.css.map */

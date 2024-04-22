@@ -1,0 +1,47 @@
+// font-family: 'Alegreya', serif;
+// font-family: 'Pathway Extreme', sans-serif;
+
+body {
+    margin: 0;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    // .logo {
+    //     display: flex;
+    //     align-items: center;
+    //     font-family: "Alegreya", serif;
+    //     background-color: #ffd5a4;
+    //     width: 180px;
+    //     border: 1px solid #b69672;
+    //     border-radius: 5px;
+    //     cursor: pointer;
+    //     img {
+    //         max-width: 55px;
+    //         aspect-ratio: 1/1;
+    //     }
+    //     p {
+    //         font-size: 30px;
+    //         margin: 0;
+    //         padding: 0;
+    //         color: #6d442d;
+    //     }
+    // }
+}
+.header-Section {
+    //width: 100%;
+    height: 600px;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .headerText {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(2rem, 10rem, 12rem);
+        background: linear-gradient(to right, rgb(255, 191, 117) 20%, rgb(87, 37, 227), rgb(113, 244, 224) 80%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

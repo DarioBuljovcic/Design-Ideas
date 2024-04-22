@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(34, 34, 34);
+}
+
+.container {
+  display: grid;
+  gap: 1.5rem;
+  position: relative;
+}
+.container input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 0.3rem solid rgb(0, 234, 255);
+  box-shadow: 0 0 10px rgb(0, 234, 255);
+  transition: transform 0.1s ease-in;
+  border-radius: 50%;
+  transform-origin: center;
+  background-color: transparent;
+  z-index: 10;
+}
+.container input:checked {
+  transform: scale(1.2);
+  border: 0.4rem solid rgb(0, 234, 255);
+}
+.container .dot {
+  background-color: rgb(0, 234, 255);
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgb(0, 234, 255);
+  width: 1rem;
+  aspect-ratio: 1/1;
+  left: 1.05rem;
+  top: 2.45rem;
+  z-index: 1;
+}
+.container .worm {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 2px 1rem rgb(0, 234, 255);
+  border-radius: 1vw;
+  border-radius: 50%;
+}/*# sourceMappingURL=style.css.map */
