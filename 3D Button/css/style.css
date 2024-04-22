@@ -1,3 +1,8 @@
+@property --scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.95;
+}
 body {
   width: 100vw;
   height: 100vh;
@@ -6,4 +11,63 @@ body {
   padding: 0;
   display: grid;
   place-items: center center;
+}
+body button {
+  --_background-color: orange;
+  --_hover-background: rgba(255, 255, 255, 0.5);
+  --_click-background: rgba(255, 255, 255, 0.2);
+  --_border-radius: 20px;
+  --_filter: 5px;
+  --_filter-click: 10px;
+  --_padding: 20px 30px;
+  --_motion-factor: 0.15;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+}
+body button div {
+  padding: var(--_padding);
+  position: relative;
+  z-index: 20;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: var(--_border-radius);
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+body button::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--_background-color);
+  border-radius: var(--_border-radius);
+  transition: --scale 0.2s ease;
+  animation: none;
+}
+body button:hover div {
+  background-color: var(--_hover-background);
+  -webkit-backdrop-filter: blur(var(--_filter));
+          backdrop-filter: blur(var(--_filter));
+  transition: transform 0.2s ease, background-color 0.2s ease, -webkit-backdrop-filter 0.2s ease;
+  transition: backdrop-filter 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+  transition: backdrop-filter 0.2s ease, transform 0.2s ease, background-color 0.2s ease, -webkit-backdrop-filter 0.2s ease;
+  transform: translateY(-5px);
+  border: 1px solid rgba(255, 255, 255, 0.658);
+}
+body button:hover::before {
+  transform: translateY(calc(var(--_y-motion) * var(--_motion-factor) * -1 + 5px)) translateX(calc(var(--_x-motion) * var(--_motion-factor) * -1)) scale(var(--scale));
+}
+body button:active div {
+  background-color: var(--_click-background);
+  -webkit-backdrop-filter: blur(--_filter-click);
+          backdrop-filter: blur(--_filter-click);
+}
+body button:active::before {
+  --scale: 0.88;
+  transform: translateY(calc(var(--_y-motion) * var(--_motion-factor) * -1 + 5px)) translateX(calc(var(--_x-motion) * var(--_motion-factor) * -1)) scale(var(--scale));
 }/*# sourceMappingURL=style.css.map */
